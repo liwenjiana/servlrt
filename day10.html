@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day10</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>1.过滤器的优点</h1>
+<pre><code>a.不修改源代码的情况下，为程序增加新的功能。　
+b.可以将多个web组件相同的逻辑集中写在一个类里面
+（即过滤器里面），方便代码的维护。
+</code></pre>
+
+<h1>2.jsp基础</h1>
+<h2>(1)jsp是什么?</h2>
+<pre><code>sun公司制订的一种服务器端的动态页面技术规范。
+本质就是一个servlet。
+</code></pre>
+
+<h2>(2)如何写一个jsp文件?</h2>
+<pre><code>step1.写一个以.jsp为后缀的文件。
+step2.添加
+ 1)html(css,js): 直接写
+ 2)java代码:
+    a. java代码片断
+        &lt;%  java代码  %&gt;
+    b. jsp表达式
+        &lt;%= java表达式 %&gt;
+    c. jsp声明     (a1.jsp)
+        &lt;%! 声明一个变量或者方法  %&gt;
+ 3)指令
+    a.什么是指令?
+     告诉容器，在将jsp文件转换成servlet类的时候，做一些额外的处理（比如导包）。
+    b.语法
+        &lt;%@ 指令名　　属性＝值 %&gt;
+    c.page指令
+        import属性：导包
+        pageEncoding属性：告诉容器，在读取jsp
+            文件的内容时，使用哪个字符集去解码。
+        contentType属性：设置response.setContentType方法的参数值。
+        session属性: (a2.jsp) 缺省值是true,
+                如果值为false,session隐含对象
+                就不能用了。
+        errorPage属性 (a3.jsp):指定一个异常处理
+            页面。当前页面发生异常，容器会调用该异常处理页面来处理。
+        isErrorPage属性 (a4.jsp):缺省值是 false,如果值为true,则可以使用
+            exception隐含对象。
+
+    d.include指令
+        file属性：指定要插入的文件的名称。
+        容器在将jsp转换成servlet类时，会将
+        指定的文件的内容插入到该指令所在的位置。
+
+    c.taglib指令
+4)隐含对象
+    a.什么是隐含对象?
+    可以直接使用的对象，比如out
+    b.为什么可以直接使用这些隐含对象?
+    容器会添加获得这些隐含对象的代码。
+    c.有哪一些隐含对象?
+        out,request,response
+        session
+        application
+        exception
+        pageContext: (a6.jsp,a7.jsp) 
+            容器会为每一个jsp实例创建唯一的一个
+            符合PageContext接口要求的对象，
+            该对象会一直存在（除非jsp实例被销毁）。
+            作用１：绑订数据
+                注：绑订的数据只有对应的jsp
+                能够访问（相当于jsp实例的钱包）。
+            作用２：提供了查找其它所有隐含对象
+                的方法。
+
+        config (a5.jsp):就是ServletConfig对象 
+        page (jsp实例本身) 
+            注:jsp对应的servlet对象
+5)注释  (a8.jsp)
+    a. &lt;!-- 注释内容 --&gt; 如果注释的内容是java
+            代码，仍然会执行。
+    b. &lt;%-- 注释内容 --%&gt;
+</code></pre>
+
+<h2>(3)jsp是如何执行的?</h2>
+<pre><code>阶段一：　容器要将jsp文件转换成一个servlet类。
+    html ----&gt;service方法里，使用out.write输出
+    &lt;% %&gt; ---&gt;service方法里，照搬。
+    &lt;%= %&gt; --&gt;service方法里，使用out.print输出
+    &lt;%!  %&gt;---&gt;添加新的属性或者方法。
+阶段二：　容器调用该servlet。
+</code></pre>
+
+<h1>3. jsp标签和el表达式</h1>
+<h2>(1)jsp标签是什么?</h2>
+<pre><code>jsp标签语法类似于html标签，用来替换jsp中的java
+代码。
+注：
+    因为直接在jsp文件中写java代码，不利于页面的
+    维护（比如将jsp文件交给美工去修改就不方便） 。
+    使用jsp标签代替jsp文件中的java代码，有两个
+    优点：
+        a.jsp文件变得简洁。
+        b.jsp标签可以复用。
+</code></pre>
+
+<h2>(2)el表达式是什么?</h2>
+<pre><code>一套简单的运算规则，用于给jsp标签的属性赋值，
+也可以直接输出（即也可以脱离jsp标签直接使用）。
+</code></pre>
+
+<h2>(3)el表达式的使用</h2>
+<pre><code>1)访问bean的属性
+注：如果一类满足如下几个要求，就可以称之为一个
+    javabean。
+    a.public class
+    b.有无参构造器 (public)。
+    c.有一些属性及对应的get/set方法。
+方式一 
+    ${user.username}
+        容器依次从pageContext,request,session,
+        servletContext中查找绑订名为&quot;user&quot;的对象(即执行getAttribute方法)，找到之后，
+        调用该对象的getUsername方法并输出。
+        注:
+            a.会将null转换成&quot;&quot;输出。
+            b.如果依据绑订名找不到对应的
+            对象，会输出&quot;&quot;。
+            c.可以使用pageScope,requestScope,
+            sessionScope,applicationScope
+            来指定查找范围。
+方式二 
+    ${user['username']} 
+        注:
+            a.[]里面可以使用绑订名。
+            b.[]里面可以使用从０开始的下标，
+            用来访问数组中指定下标的元素。
+2) 进行一些简单的运算，运算结果可以给jsp
+    标签的属性赋值，也可以直接输出。
+   a. 算术运算　+,-,*,/,%
+        注: 
+            + 只能求和。
+   b.关系运算  &gt;,&lt;,&gt;=,&lt;=,==,!=
+   c.逻辑运算　&amp;&amp;,||,!
+   d,empty运算　empty
+
+3)读取请求参数值     
+    ${param.uname}
+    等价于
+        String request.getParameter(&quot;uname&quot;);
+    ${paramValues.city}
+    等价于
+        String[] request.getParameterValue(&quot;city&quot;);
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

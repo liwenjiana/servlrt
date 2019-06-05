@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day07</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>8)cookie的限制</h2>
+<pre><code>a.可以被用户禁止。
+b.不安全（对于敏感数据，尽量避免保存在
+    cookie里面，如果要保存，一定要加密）。
+c.大小有限制（大约是4k左右）
+d.数量有限制(大约是几百个)
+e.只能保存字符串。
+</code></pre>
+
+<h1>1. Session（会话）</h1>
+<h2>(1)什么是Session?</h2>
+<pre><code>服务器端为了保存用户状态而创建的一个特殊的对象。
+</code></pre>
+
+<h2>(2)工作原理</h2>
+<pre><code>当浏览器访问服务器时，服务器创建一个特殊对象
+(即session对象，该对象有一个唯一的id,称之为
+sessioId),接下来，服务器会将sessionId发送给
+浏览器（默认会使用cookie形式）；
+浏览器再次访问服务器时，会将sessionId发送过来，
+服务器可以利用sessionId找到对应的session对象。
+</code></pre>
+
+<h2>(3)如何获得Session对象?</h2>
+<pre><code>方式一 
+    HttpSession s = 
+        request.getSession(boolean flag)。
+    当flag为true时:
+        先查看请求当中是否有sessionId,如果有，
+    则依据sessionId去查找对应的session对象，如果
+    找到了，则返回，如果找不到，则创建一个新的
+    session对象。如果没有sessionId,则创建session
+    对象。
+    当flag为false时:
+        先查看请求当中是否有sessionId,如果有，
+    则依据sessionId去查找对应的session对象，如果
+    找到了，则返回，如果找不到，返回null。如果
+    没有sessionId,返回null。
+</code></pre>
+
+<p><img src="session.png" />
+	方式二
+		HttpSession s = request.getSession();
+		等价于request.getSession(true)。</p>
+<h2>(4)绑订数据</h2>
+<pre><code>    session.setAttribute(String name,
+    Object obj);
+    Object session.getAttribute(String name);
+    注：如果值不存在，返回null。
+    session.removeAttribute(String name);
+</code></pre>
+
+<p><img src="count.png" /></p>
+<h2>(5)session超时</h2>
+<pre><code>a.什么是session超时?
+服务器会将空闲时间过长的session对象删除掉。
+注：
+    这样做的好处是可以节省内存空间的占用。
+    默认超时限制是30分钟。
+b.修改超时时间限制
+    方式一：修改配置文件
+        &lt;session-config&gt;
+        &lt;session-timeout&gt;30&lt;/session-timeout&gt;
+        &lt;/session-config&gt;
+方式二: setMaxInactiveInterval(int seconds)
+</code></pre>
+
+<h2>(6)删除session</h2>
+<pre><code>    session.invalidate()
+</code></pre>
+
+<h1>2.案例:登录</h1>
+<pre><code>用户填写用户名和密码并提交，服务器端依据
+用户名和密码查询数据库，如果找到符合条件的
+记录，则登录成功(返回用户列表页面)，否则登录失败（需要给用户相应的提示，比如提示“用户名或密码错误”)。
+step1.导包    mysql驱动,dbcp
+step2.db.properties
+step3.DBUtils类(并测试)
+step4.User类
+step5.UserDAO类(并测试)
+        public User find(String username);
+step6.login.jsp
+step7.ActionServlet
+        建议配置成*.do
+        request.setAttribute(&quot;login_failed&quot;,
+        &quot;用户名或密码错误&quot;);
+        request.getRequestDispatcher(&quot;login.jsp&quot;).forward...
+</code></pre>
+
+<h2>session验证</h2>
+<pre><code>step1.登录成功以后，将一些数据绑订到session
+对象上，比如
+    session.setAttribute(&quot;user&quot;,user);
+step2.当用户请求发送过来之后，检查session对象上
+是否存在对应的数据，比如
+    Object obj = session.getAttribute(&quot;user&quot;);
+    if(obj == null){
+        //没有登录
+        response.sendRedirect(&quot;login.jsp&quot;);
+    }       
+</code></pre>
+
+<p><img src="session_check.png" />		</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
